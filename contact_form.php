@@ -25,7 +25,7 @@
 				      	<td style="padding-top: 50px;"><input placeholder="Enter Your Name" type="text" name="txtName" ></td>
               </tr>
               <tr >
-                <label style="float: left; position: absolute; margin-top: 100px;  margin-left: -160px;"> Email :</label>
+                <label style="float: left; position: absolute; margin-top: 100px; margin-left: -160px;"> Email :</label>
 					      <td style="padding-top: 50px;"><input required placeholder="Enter Your Email id " type="email" name="txtEmail"></td>
               </tr>
               <tr>

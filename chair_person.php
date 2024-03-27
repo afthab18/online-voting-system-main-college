@@ -59,7 +59,7 @@
         <div class="row">
             <div class="col-md-6" >
                 <h1 style="padding-top: 20px;">Candidate Enroll</h1>
-                <form action="process_cand.php" method="post">
+                <form action="process_cand_cp.php" method="post">
                 <table>
                     <tr>
                         <td class="td-1">Name :</td>

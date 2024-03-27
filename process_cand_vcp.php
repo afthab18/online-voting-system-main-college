@@ -12,7 +12,7 @@ $enroll =  $_REQUEST['txtEnrollID'];
 //database connection
 include('dbConnect.php');
 
-$sql = "INSERT into candidate_3rd(name,email,mobile,branch,rollno,enrollid) values(:name,:email,:mobile,:branch,:rollno,:enrollid)";
+$sql = "INSERT into candidates_vcp(name,email,mobile,branch,enrollid) values(:name,:email,:mobile,:branch,:enrollid)";
 
 $stmt = $pdo->prepare($sql);
 

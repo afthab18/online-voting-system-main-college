@@ -42,19 +42,19 @@ include("header.html");
         <div class="row">
             <div class="col-md-12">
                 <h2 class="h2_3">Result</h2>
-            <a href="validation.php"><button style="margin-top:40px;width:5.5cm;" class="btn-special-2">Chair Person</button></a>
+            <a href="result_cp.php"><button style="margin-top:40px;width:5.5cm;" class="btn-special-2">Chair Person</button></a>
             </div>
             <div class="col-md-12">
-            <a href="validation_2.php"><button style="margin-top:60px;width:5.5cm;" class="btn-special-2">Vice Chair Person</button></a>
+            <a href="result_vcp.php"><button style="margin-top:60px;width:5.5cm;" class="btn-special-2">Vice Chair Person</button></a>
             </div>
             <div class="col-md-12">
-            <a href="validation_3.php"><button style="margin-top:60px;width:5.5cm; " class="btn-special-2">Secretery</button></a>
+            <a href="result_s.php"><button style="margin-top:60px;width:5.5cm; " class="btn-special-2">Secretery</button></a>
             </div>
                <div class="col-md-12">
-            <a href="validation_3.php"><button style="margin-top:60px;width:5.5cm; " class="btn-special-2">Arts Club Secretery</button></a>
+            <a href="result_as.php"><button style="margin-top:60px;width:5.5cm; " class="btn-special-2">Arts Club Secretery</button></a>
             </div>
                <div class="col-md-12">
-            <a href="validation_3.php"><button style="margin-top:60px;width:5.5cm; " class="btn-special-2">Sports Secretery</button></a>
+            <a href="result_ss.php"><button style="margin-top:60px;width:5.5cm; " class="btn-special-2">Sports Secretery</button></a>
             </div>
         </div>
     </div>

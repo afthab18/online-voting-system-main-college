@@ -3,7 +3,6 @@ $name = $_REQUEST['txtName'];
 $email   = $_REQUEST['txtEmail'];
 $number = $_REQUEST['txtNumber'];
 $branch =  $_REQUEST['txtbranch'];
-$rollno =  $_REQUEST['txtRollNo'];
 $enroll =  $_REQUEST['txtEnrollID'];
 
 
@@ -13,7 +12,7 @@ $enroll =  $_REQUEST['txtEnrollID'];
 //database connection
 include('dbConnect.php');
 
-$sql = "INSERT into candidate_2nd(name,email,mobile,branch,enrollid) values(:name,:email,:mobile,:branch,:enrollid)";
+$sql = "INSERT into candidates_cp(name,email,mobile,branch,enrollid) values(:name,:email,:mobile,:branch,:enrollid)";
 
 $stmt = $pdo->prepare($sql);
 

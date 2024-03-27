@@ -1,22 +1,4 @@
-<?php
-$name = $_REQUEST['txtName'];
-$email   = $_REQUEST['txtEmail'];
-$message = $_REQUEST['txtMessage'];
 
-
-//database connection
-include('dbConnect.php');
-
-$sql = "INSERT into contact(name,email,message) values(:name,:email,:message)";
-
-$stmt = $pdo->prepare($sql);
-
-$stmt->bindParam(":name",$name);
-$stmt->bindParam(":email",$email);
-$stmt->bindParam(":message",$message);
-
-$stmt->execute();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +30,7 @@ $stmt->execute();
     <div class="container-fluid" id="cont-3">
         <header id="nav-bar">
           <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-            <a class="navbar-brand" href=index.html  style="color: white; font-weight: 600; margin-top: 15px;">VOTE FOR</a>
+            <a class="navbar-brand" href=index.html  style="color: white; font-weight: 600; margin-top: 15px;">GO VOTE</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon" style="color: white;"></span>
             </button>
@@ -58,7 +40,7 @@ $stmt->execute();
                   <a class="nav-link" href="index.html" style="color:white; font-weight: 600; text-align: center; font-size: 18px; margin-top: 20px;  text-transform: capitalize; padding: 20px;">Home</a>
                 </li>
                 <li class="nav-item" >
-                  <a class="nav-link" href="candidate_position.php"  style="color: white; font-weight: 600; text-align: center; font-size: 18px; margin-top: 20px;  text-transform: capitalize; padding: 20px;">Candidate</a>
+                  <a class="nav-link" href="candidate.php"  style="color: white; font-weight: 600; text-align: center; font-size: 18px; margin-top: 20px;  text-transform: capitalize; padding: 20px;">Candidate</a>
                 </li>
               
                 <li class="nav-item">
@@ -152,4 +134,5 @@ $stmt->execute();
     <script src="js/jquery-3.2.1.slim.min.js"></script>
     <script src="js/popper.min.js"></script>    
     <script src="js/bootstrap.min.js"></script>  
-    
+</body>
+</html>
