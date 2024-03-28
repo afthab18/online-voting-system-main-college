@@ -1,49 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title></title>
-      <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-.btn-special-2 {
-    padding: 12px 24px;
-    background-color: white;
-    color: hsl(243, 80%, 62%);
-    border-radius: 6px;
-    border: 2px hsl(243, 80%, 62%) solid;
-    transition: transform 250ms ease-in-out;
-}
-
-.btn-special-2:hover {
-    transform: scale(1.10);
-}
-
-.btn-special-2:active {
-    transform: scale(.9);
-}
-#footersection{
-    margin-top:80px;
-}
-.h2_3{
-    margin-top:30px;
-}
-
-    </style>
+	<title></title>
+	<meta charset="utf-8">
 </head>
 <body>
-    <div class="container-fluid" id="cont-3">
+     <!-- Required meta tags -->
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+ <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+ 
+
+ <!-- Bootstrap CSS -->
+ <link rel="stylesheet" href="css/bootstrap.min.css">
+ <link rel="stylesheet" href="css/style.css">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ <title></title>
+</head>
+<body>
+<div class="container-fluid" id="cont-3">
         <header id="nav-bar">
           <nav class="navbar navbar-expand-lg navbar-light bg-dark">
             <a class="navbar-brand" href=index.html  style="color: white; font-weight: 600; margin-top: 15px;">VOTE FOR</a>
@@ -80,40 +56,84 @@
             </div>
           </nav>
         </header>
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 style="margin-top: 15px;">ADMIN DASHBOARD</h1>
-                    </div>
-                </div>
-            </div>
-        </section>
-          <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h2 class="h2_3">Result</h2>
-            <a href="result_cp.php"><button style="margin-top:40px;width:5.5cm;" class="btn-special-2">Chair Person</button></a>
-            </div>
-            <div class="col-md-12">
-            <a href="result_vcp.php"><button style="margin-top:60px;width:5.5cm;" class="btn-special-2">Vice Chair Person</button></a>
-            </div>
-            <div class="col-md-12">
-            <a href="result_s.php"><button style="margin-top:60px;width:5.5cm; " class="btn-special-2">Secretery</button></a>
-            </div>
-               <div class="col-md-12">
-            <a href="result_as.php"><button style="margin-top:60px;width:5.5cm; " class="btn-special-2">Arts Club Secretery</button></a>
-            </div>
-               <div class="col-md-12">
-            <a href="result_ss.php"><button style="margin-top:60px;width:5.5cm; " class="btn-special-2">Sports Secretery</button></a>
+	<section style="padding-top:50px; padding-bottom:50px">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" >
+
+            
+	<?php session_start();
+
+
+	include('dbConnect.php');
+	$sql = "select * from candidates_cp order by id desc";
+
+	$stmt = $pdo->prepare($sql);
+	$stmt->execute();
+
+	$rs =  $stmt->fetchAll();
+
+	echo "
+		<table border='2'>
+			<tr>
+				<th>Sno.</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Number</th>
+				<th>Enroll ID</th>
+				<th>status</th>
+				<th>Action</th>
+			</tr>
+	";
+	$i = 1;
+	foreach($rs as $row){
+		$cid = $row['id'];
+		echo "
+		<tr>
+			<td>".$i."</td>
+			<td>".$row['name']."</td>
+			<td>".$row['email']."</td>
+			<td>".$row['mobile']."</td>
+			<td>".$row['branch']."</td>
+			<td>".$row['enrollid']."</td>
+			<td>";
+			if($row['approve_status']==0){
+				echo "Pending";
+			}else if($row['approve_status']==1){
+				echo "Approved";
+			}else{
+				echo "Rejected";
+			}
+			
+			echo "</td>
+			<td>";
+			if($row['approve_status']==2){
+				echo '<a href="change_status_cp.php?id='.$cid.'&status=1" class="btn btn-success">Approve</a>';
+			}else if($row['approve_status']==1){
+				echo '<a href="change_status_cp.php?id='.$cid.'&status=2" class="btn btn-danger">Reject</a>';
+			}else if($row['approve_status']==0){
+				echo '<a href="change_status_cp.php?id='.$cid.'&status=1" class="btn btn-success">Approve</a>';
+				echo '<a href="change_status_cp.php?id='.$cid.'&status=2" class="btn btn-danger">Reject</a>';
+			}
+
+			echo "</td>
+        </tr>
+		";
+		$i++;
+	}
+	echo "</table>";
+    ?>
+        </div>
             </div>
         </div>
-    </div>
-    <?php 
-        include("footer.html")?>
-          <!-- JS -->
+    </section>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      
         <script src="js/jquery-3.2.1.slim.min.js"></script>
         <script src="js/popper.min.js"></script>    
         <script src="js/bootstrap.min.js"></script>  
+        
 </body>
 </html>

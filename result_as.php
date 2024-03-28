@@ -4,7 +4,7 @@ include("dbConnect.php");
 
 
 
-$sql = "SELECT candidate,count(*) as result from  `users` group by candidate";
+$sql = "SELECT candidate,count(*) as result from  `user_as` group by candidate";
 
 $stmt = $pdo->prepare($sql);
 $stmt->execute();

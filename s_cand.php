@@ -69,16 +69,16 @@
          
          <div class="row">
            <div class="col-md-12" >
-          
-           <h1 class="text-center" style="margin-bottom: 10px;">Online Voting System</h1>
-           <p class="text-center" style="margin-bottom: 50px;">Candidates</p>
+           <h1 class="text-center">
+            
+           <p class="text-center" style="margin-bottom: 50px;">Candidates and Voting System</p>
          </div>
-         <?php
+         <?php 
+   
+      
 
-
-   include ("dbConnect.php");
-   $sql = "select * from cadidates_as where approve_status=1";
- 
+   $sql = "select * from candidates_s where approve_status=1";
+   include("dbConnect.php");
     
        $result= $pdo->query($sql);
      
@@ -93,7 +93,6 @@
                   <div class="card-body">
                     <h2 class="card-title"><?php echo $row['name']; ?></h2>
                     <p class="card-text"><?php echo $row['branch']; ?></p>
-                    <a href="confirmation.php" class="btn btn-primary">Vote Now</a>
                   </div>
                 </div>
               </div>
@@ -111,7 +110,7 @@
             <div class="col-md-6">
               <hr>
               <div class="Footer">
-              <ul style="display: flex;">
+                <ul style="display: flex;">
                   <li style="list-style: none; padding: 10px; "><a href="index.html" style="text-decoration: none; color: #a517ba;">Home</a></li>
                   <li style="list-style: none; padding: 10px; "><a href="about.php" style="text-decoration: none; color: #a517ba;">About</a></li>
                   <li style="list-style: none; padding: 10px; "><a href="suggestion.html" style="text-decoration: none; color: #a517ba;">Suggestion</a></li>

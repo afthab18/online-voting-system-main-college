@@ -33,9 +33,9 @@
 			unset($_SESSION['error']);
 			}
 	?>
-					<form action="voter_logged.php" method="post">
+					<form action="voter_process.php" method="post">
 						<div class="form-group">
-							<input required type="text" class="form-control" name="userID" placeholder="User ID*" value="" />
+							<input required type="text" class="form-control" name="userid" placeholder="User ID*" value="" />
 						</div>
 						<div class="form-group">
 							<input required type="text" class="form-control" name="name" placeholder="name*" value="" />
