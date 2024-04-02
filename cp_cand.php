@@ -71,7 +71,7 @@
            <div class="col-md-12" >
            <h1 class="text-center">
             
-           <p class="text-center" style="margin-bottom: 50px;">Candidates and Voting System</p>
+           <p class="text-center" style="margin-bottom: 50px;">Candidates</p>
          </div>
          <?php 
    

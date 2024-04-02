@@ -16,6 +16,15 @@
 			border:4px #a517ba solid;
 			border-radius:5px;	
 		}
+		  .slideUpBtn {
+    padding: 12px 24px;
+    background-color: transparent;
+    border: 2px solid hsl(243, 80%, 62%);
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(1,.15,.34,.92)
+}
 	</style>
 	<body>
 		<?php
@@ -38,16 +47,19 @@
 							<input required type="text" class="form-control" name="userid" placeholder="User ID*" value="" />
 						</div>
 						<div class="form-group">
-							<input required type="text" class="form-control" name="name" placeholder="name*" value="" />
+							<input required type="text" class="form-control" name="name" placeholder="Name*" value="" />
 						</div>
 						<div class="form-group">
-							<input required type="submit" class="btnSubmit" value="Login"/>
+							<input required type="submit" class="slideUpBtn" value="Login"/>
 						</div>	
 					</form>
 				</div>
 			</div>
 		</div>
 	</section>
+	<?php
+	include ('footer.html');
+	?>
 	<script src="js/jquery-3.2.1.slim.min.js"></script>
 		<script src="js/popper.min.js"></script>    
 		<script src="js/bootstrap.min.js"></script> 

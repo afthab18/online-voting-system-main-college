@@ -17,9 +17,28 @@
 		border: 4px #a517ba solid;
 		border-radius: 5px;
 	}
+
+    .slideUpBtn {
+    padding: 12px 24px;
+    background-color: transparent;
+    border: 2px solid hsl(243, 80%, 62%);
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(1,.15,.34,.92)
+}
+
+
+
+
+
+    
 </style>
 
 <body>
+	<?php
+	include ("header.html");
+	?>
 	<section class="sec">
 		<div class="card">
 			<div class="row">
@@ -41,7 +60,7 @@
 								placeholder="Your Password *" value="" />
 						</div>
 						<div class="form-group">
-							<input required type="submit" class="btnSubmit" value="Login" />
+							<input required type="submit" class="slideUpBtn" value="Login" />
 						</div>
 					</form>
 				</div>
@@ -51,6 +70,9 @@
 	<script src="js/jquery-3.2.1.slim.min.js"></script>
 	<script src="js/popper.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<?php
+	include ("footer.html");
+	?>
 </body>
 
 </html>

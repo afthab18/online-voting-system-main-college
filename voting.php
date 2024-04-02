@@ -32,7 +32,7 @@
       
               
                 <li class="nav-item" >
-                  <a class="nav-link" href="logout.php"  style="color: white; font-weight: 600; text-align: center; font-size: 18px; margin-top: 20px;  text-transform: capitalize; padding: 20px;">Logout</a>
+                  <a class="nav-link" href="vote_logout.php"  style="color: white; font-weight: 600; text-align: center; font-size: 18px; margin-top: 20px;  text-transform: capitalize; padding: 20px;">Logout</a>
                 </li>
               
               </ul>
@@ -59,5 +59,6 @@
         <script src="js/jquery-3.2.1.slim.min.js"></script>
         <script src="js/popper.min.js"></script>    
         <script src="js/bootstrap.min.js"></script>  
+        
 </body>
 </html>
