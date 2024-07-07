@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS `candidates_as` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
+  `MOBILE` BIGINT(20) DEFAULT NULL,
   `branch` varchar(30) DEFAULT NULL,
   `enrollid` varchar(40) DEFAULT NULL,
   `approve_status` int(11) DEFAULT '0' COMMENT '0 for pending , 1 for approve 2 for reject',
